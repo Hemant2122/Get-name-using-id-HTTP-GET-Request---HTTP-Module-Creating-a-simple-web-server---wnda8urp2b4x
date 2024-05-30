@@ -16,19 +16,19 @@ app.use(express.json())
 app.get("/api/v1/names/:id", (req, res) => {
     let {id} = req.params;
     id *= 1;
-    const productName = productNames.find((productName) => productName.id === id);
-    if(!productName){
+    const name = productNames.find((productName) => productName.id === id);
+    if(!name){
         return res.status(404).send({
             status: "failed",
-            message: "Not found!",
+            message: "Not found!"
         });
     }else{
         res.status(200).send({
             status: "Success",
             message: "Product name fetched successfully",
             data: {
-                productName,
-            },
+                name,
+            }
         });
     }
 });
