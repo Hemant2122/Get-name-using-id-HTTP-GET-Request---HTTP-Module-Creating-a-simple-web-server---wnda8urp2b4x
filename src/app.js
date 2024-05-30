@@ -25,7 +25,7 @@ app.get("/api/v1/names/:id", (req, res) => {
     }else{
         res.status(200).send({
             status: "Success",
-            message: "Product Name fetched successfully",
+            message: "Product name fetched successfully",
             data: {
                 productName,
             },
